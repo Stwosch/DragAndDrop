@@ -1,0 +1,43 @@
+﻿<Window x:Class="DragAndDrop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DragAndDrop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" 
+                 PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown" 
+                 AllowDrop="True" 
+                 DragEnter="ListBox_DragEnter" 
+                 Drop="ListBox_Drop" 
+                 MouseMove="ListBox_MouseMove"
+                 SelectionMode="Extended">
+            <ListBoxItem>List 1, element 1</ListBoxItem>
+            <ListBoxItem>List 1, element 2</ListBoxItem>
+            <ListBoxItem>List 1, element 3</ListBoxItem>
+            <ListBoxItem>List 1, element 4</ListBoxItem>
+            <ListBoxItem>List 1, element 5</ListBoxItem>
+        </ListBox>
+        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+        <ListBox Grid.Column="2" 
+                 PreviewMouseLeftButtonDown="ListBox_PreviewMouseLeftButtonDown" 
+                 AllowDrop="True" 
+                 DragEnter="ListBox_DragEnter" 
+                 Drop="ListBox_Drop" 
+                 MouseMove="ListBox_MouseMove"
+                 SelectionMode="Extended">
+            <ListBoxItem>List 2, element 1</ListBoxItem>
+            <ListBoxItem>List 2, element 2</ListBoxItem>
+            <ListBoxItem>List 2, element 3</ListBoxItem>
+            <ListBoxItem>List 2, element 4</ListBoxItem>
+            <ListBoxItem>List 2, element 5</ListBoxItem>
+        </ListBox>
+    </Grid>
+</Window>
